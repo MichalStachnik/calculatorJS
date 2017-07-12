@@ -1,0 +1,38 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Avenir';
+}
+h1{
+    text-align: center;
+}
+#display{
+    width: 100%;
+    background: darksalmon;
+    height: 50px;
+}
+#calculator{
+    width: 400px;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+#buttons{
+    display: flex;
+    flex-wrap: wrap;
+    height: 40vh;
+
+}
+button{
+    padding: 5px;
+    width: 25%;
+    background: lavender;
+    border: 1px solid darkseagreen;
+    font-size: 18px;
+    /*height: 40px;*/
+
+}
+button:focus{
+    outline: none;
+    background: white;
+}
+
