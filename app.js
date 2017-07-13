@@ -8,10 +8,13 @@ buttons.forEach(function(button) {
         console.log(inputArray)
     }
 })
-
 parseInput = function(input){
-    console.log(input.innerHTML)
+    console.log(inputArray.length)
     switch(input.innerHTML){
+        case "AC":
+            inputArray = []
+            display.innerHTML = ''
+            break;
         case "0":
         case "1":
         case "2":
@@ -22,21 +25,41 @@ parseInput = function(input){
         case "7":
         case "8":
         case "9":
+            display.innerHTML = input.innerHTML
+            inputArray.push(input.innerHTML)
+            break
         case "X":
         case "+":
         case "-":
         case "/":
-            display.innerHTML = input.innerHTML
-            inputArray.push(input.innerHTML)
+        case ".":
+        case "%":
+            if(inputArray[inputArray.length - 1] === 'X' || inputArray[inputArray.length - 1] === '+' || inputArray[inputArray.length - 1] === '-' || inputArray[inputArray.length - 1] === '/' || inputArray[inputArray.length - 1] === '%' || inputArray[inputArray.length - 1] === '.'){
+                break
+            }
+            else {
+                display.innerHTML = input.innerHTML
+                inputArray.push(input.innerHTML)
+                break 
+            }  
         case "=":
             calculate(inputArray)
+            break;
     }
 }
 
 calculate = function(equation){
-    var output
-    for(var i = 0; i < inputArray.length; i++){
-        
-        
+    var outputString = ''
+    for(var i = 0; i < equation.length; i++){
+        if(equation[i] === 'X'){
+            outputString += '*'
+        }
+        else{
+            outputString += equation[i]
+        }
     }
+    outputString = eval(outputString)
+    console.log(outputString)
+    display.innerHTML = outputString
+    inputArray = [outputString]
 }

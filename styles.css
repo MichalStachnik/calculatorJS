@@ -6,15 +6,25 @@
 h1{
     text-align: center;
 }
+body{
+    height: 100vh;
+    background: linear-gradient(to right,#2f2f31,dimgray , grey, dimgray, #2f2f31);
+    background: linear-gradient(to right,#FFE7DB, #F5F5FF , #9999B2, #F5F5FF, #FFE7DB);
+}
 #display{
     width: 100%;
     background: darksalmon;
-    height: 50px;
+    height: 60px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
 }
 #calculator{
     width: 400px;
     margin: 0 auto;
-    border: 1px solid black;
+    border: 3px solid rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.3);
 }
 #buttons{
     display: flex;
@@ -24,12 +34,13 @@ h1{
 }
 button{
     padding: 5px;
-    width: 25%;
+    width: 24%;
     background: lavender;
-    border: 1px solid darkseagreen;
+    border: none;
     font-size: 18px;
-    /*height: 40px;*/
-
+    margin: 2px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #888888;
 }
 button:focus{
     outline: none;
